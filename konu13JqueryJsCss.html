@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery ve Javascript ile Css Islemleri</title>
+    <style>
+        .baslik{
+            color: coral;
+            font-size:larger;
+        }
+        .sekil{
+            color:darkgreen
+        }
+    </style>
+
+<script src="/jquery-3.6.1.min.js"></script>
+</head>
+<body>
+    <h1>jquery ve javascript ile Css islemleri</h1>
+    
+    
+    <h3 id="jqilegizle">Bu element jquery ile gizlenecek</h3>
+    <h3 id="jsilegizle">Bu element js ile gizlenecek</h3>
+    <script>
+        $("#jqilegizle").hide() // elementi jquey ile gizle
+    document.getElementById("jsilegizle").style.display = "none " // elementi javascript ile gizle
+
+    //elementleri goster
+    $("#jqilegizle").show() //jquery ile elementi gorunur yapma
+    document.getElementById("jsilegizle").style.display = "block" //elementi js ile goster
+
+    </script>
+    <h2></h2>
+    <div id="jqsekillendir" class="sekil test">Elementlerin css lerini degistirme</div>
+    <div id="jssekillendir" class="jssekil jstest">Elementlerin css lerini degistirme</div>
+
+    <style>.jsclass{background-color: chartreuse;}</style>
+
+    <script>
+        //jquery ile css islemleri
+        $("#jqsekillendir").css("font-size", "34px")
+        $("#jqsekillendir").css("padding", "1rem")
+        $("#jqsekillendir").css("margin", "18px")
+        //jquery ile class ekleme-silme
+        $("h2:first").addClass("baslik")
+        $("#jqsekillendir").addClass("jsclass deneme")
+        // var olan class i kaldirma
+        $("#jqsekillendir").removeClass("sekil")
+
+        //Javascript ile css islemleri
+        document.getElementById("jssekillendir").style.color = "blue"
+        document.getElementById("jssekillendir").style.padding = "18px"
+        document.getElementById("jssekillendir").style.margin = "1rem"
+
+        //javascript ile class ekleme-silme
+        document.getElementById("jssekillendir").classList.add("jsclass")
+        document.getElementById("jssekillendir").classList.remove("jsclass")
+
+
+
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery Seciciler</title>
+    <script src="/jquery-3.6.1.min.js"></script>
+    <style>
+        .brd {border: 1px solid; min-height:auto;}
+    </style>
+
+</head>
+
+<body>
+    <hr>
+    <h2 class="sinifSecici"></h2>
+    <h1>Jquery Seciciler</h1>
+    <p>Jquery Kutuphanesi ile javascript islemlerini daha az kod ile pratik bir sekilde halledebiliriz </p>
+<h2 id ="baslik">HtmlElementlerini Id ye gore secme </h2>
+    <p id ="mesaj" class="brd"></p>
+    <script>
+        //jquery de kodlar ve secme islemleri $ karakteriyle yapilir
+        $(document).ready(function(){
+            //$(document).ready metodu dokuman hazir oldugunda kodlarin calistirilmasini saglar 
+            var secilecekEleman= $(baslik); // sayfadaki id degeri baslik olan elementi sec
+            $("#mesaj").text("Basliktan gelen icerik : " + secilecekEleman[0].innerText);
+            // # karakteri bir elementi id degerine gore secmenizi saglar
+            // . karakteri bir elementi class degerine gore secmenizi saglar
+        });
+    </script>
+    <hr>
+    <h2 id="Etiket">Html Elemantlerini Etiket Adina Gore Secme </h2>
+    <p id ="Etiket" class="brd"></p>
+    <script>
+        $(document).ready(function(){
+            var secilecekEleman = $("h2");
+
+            $("Etiket"). text("Basliktan gelen icerik : " +secilecekEleman[1]).innerText;
+
+        });
+        
+        $(document).ready(function(){ //$(function kodu da $ (document).ready (function yerine kullanilabilir ))
+            var secilecekEleman = $("sinifSecici");
+            $("#sinif").text("basliktan gelen icerik : " + secilecekEleman[1]. innerText); //[1,2,3,4,5]
+
+        
+
+       
+        });
+
+    </script>
+ 
+
+</body>
+</html>

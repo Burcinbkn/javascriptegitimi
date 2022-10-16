@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Seciciler</title>
+    <style>
+        body{color:blue}
+        .classSecici{color:darkblue}
+        #idSecici{color:darkslateblue ; padding:1rem}
+        #idSecici span{border-bottom: 1px solid silver; margin-bottom: 1rem}
+        .brd{border:1px solid; min-height: 34px;}
+    </style>
+</head>
+<body>
+    <h1 class="classSecici">Js Seciciler</h1>
+    <p id ="idSecici">
+        Javascript ile DOM(Document Object Model) üzerinden elementler üzerinde
+        hızlıca maniplasyon yapabilir.
+        <span>Bunun için document yani sayfa
+            üzerindeki istediğimiz elementi seçmemiz yeterlidir.</span> 
+    </p>
+    <p class="classSecici">
+        Javascript de sayfadaki elementlerin herhangi bir özelliği ile
+            elementi seçebiliriz. Id, name, class veya alt-üst ilişkili olduğu
+            bir element üzerinden.
+            <h2 class="classSecici">Html Elementlerini Id ye gore Secme</h2>
+            <p id="mrbdny">
+                Merhaba
+            </p>
+            <p id="jsIdSeciciTest" class="brd">
+            </p>
+    </p>
+    <p class="BBB">
+        BBB
+
+
+    </p>
+    <script>
+        const icerik= document.getElementById("mrbdny"); // id sine gore element secme metodu
+        document.getElementById("jsIdSeciciTest").innerText = "mrbdny id li element icerigi : " +icerik.innerText;
+        document.getElementsByClassName("BBB")[0].innerHTML='Bu Textti Degistir'
+
+    </script>
+    <hr2>Html Elementlerini Etiket adina(Tag name)te Gore secme</h2>
+        <div>div icerigi</div>
+        <div id="bosDiv" class="brd"></div>
+        <script>
+            
+            const divler = document.getElementsByTagName("div")
+         // sayfadaki tum div elementlerini sectik.
+        document.getElementById("bosDiv").innerText = "sectigimiz div elementinden gelen icerik : " + divler[0].innerText; // getElementsByTagName metodu sayfadaki kendisine verilen html element koduna sahip tum elementleri secer. 
+        // elementlar dizi formatinda gelir ve bu diziden verdigimiz indexteki degere sahip elemente divler[0]koduyla ulasabiliriz.
+    </script>
+    <h2 class="sinifsecici">Html Elementlerini Sinif adina (calass name) ye gore secme</h2>
+    <p>
+        sayfadaki elementleri sahip oldugu class adina gore secmenizi saglar. 
+    </p>
+        <div id="sinifSecici" class="brd"></div>
+        <script>
+            var sinifSecici = document.getElementsByClassName("brd"); //class degeri sinifSecici olan elementleri sec (class kullanan birden cok element olabilecegi icin dizi formatinda liste gelir.)
+            document.getElementById("sinifSecici").innerText =sinifSecici[0].innerText;
+        </script>
+        <h2 class="sorguSecici">HTML Elementlerini Css Sorgusu Kullanarak Secme</h2>
+        <p id="sorguSeciciId" class="brd"></p>
+        <style>
+            h2.sorguSecici{
+                background-color: brown;
+                color: white;
+            }
+        </style>
+
+        <script>
+
+            var csseGoreSec = document.querySelectorAll("h2.sorguSecici");
+            document.getElementById("sorguSeciciId").innerHTML = csseGoreSec[0].innerHTML;
+        </script>
+        <hr>
+        <h2>Tek Eleman Secimi</h2>
+        <p id = "ilkElemanIcerigi"></p>
+        <style>
+            #ilkElemanicerigi{background-color: red; color: white;}
+        </style>
+        <script>
+            var ilkEleman = document.querySelector("p"); //sayfadaki ilk p elementini sec 
+            document.querySelector("#ilkElemanIcerigi").innerHTML = ilkEleman.innerHTML; //Sayfadaki ilkElemanicerigi id sine sahip ilk elemani secip icine ilkEleman elementinin icindeki degeri aktardik.
+        </script>
+        
+    
+    <hr>
+    <h2>addEventListener Methodu</h2>
+    <p id="olayBaslik"class="brd" onclick="ornekFunction()">burcin</p>
+    <p>Javascript de addEventListener Methodu ile sayfadaki olaylari dinleyebiliriz</p>
+
+    <button onclick="removeHandler()">addEventListener Sil</button>
+    <script>
+        function ornekFunction(){
+            document.getElementById("olayBaslik").innerHTML = "addEventListener calisti"
+        }
+        //addEventListener Ekleme
+        document.getElementById("olayBaslik").addEventListener("click", ornekFunction);
+        //addEventListener silme
+        function removeHandler() {
+            document.getElementById("olayBaslik").removeEventListener("click, ornekFunction");
+        }
+    </script>
+    
+</body>
+</html>

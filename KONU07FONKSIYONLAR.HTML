@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Fonksiyonlar</title>
+
+</head>
+<body>
+    <h1>Js Fonksiyonlar</h1>
+    <div>
+        Js Fonksiyonlar c# daki metotlara karsilik gelir.
+    </div>
+    <p>
+        Html p elementi paragraf yazilari icin kullanilir
+    </p>
+    <script>
+        //Fonksiyon Tnimlama
+        function FonksiyonAdi(parametre) {
+            console.log('Fonksiyona gonderilen deger : ', parametre)
+        }
+        //Fonksiyon Cagirma
+        FonksiyonAdi('Javascript ile fonksiyon cagirimi')
+
+        FonksiyonAdi('Fonksiyona Parametre gonderdik')
+
+        function ToplamaYap(sayi1, sayi2) {
+            console.log('sayilarin toplami : ', sayi1+ sayi2)
+        }
+            ToplamaYap(10,8)
+            
+        function RenkDegistir(arkaplanRengi, yaziRengi) {
+            document.bgColor = arkaplanRengi
+            // documet.bgColor javascript kodu document sayfa oluyor,bgColor ise sayfanin arkaplan rengini degistiren js de var olan property
+            document.fgColor = yaziRengi //fgColor ise sayfadaki yazi rengini degistiren js ozelligi
+            
+        }
+        //RenkDegistir("red", "white");
+        var icgenislik = window.innerWidth; // window nesnesi de javascript de hazir gelen bir diger nesnedir ve icerisinde sayfanin calistigi pencereyle alakali yapabilecegimiz hazir islemleri barindirir.
+        var icyukseklik = window.innerHeight; // InnerHeight ozellihi bize taratici pencere yuksekligini verir.
+        //Dis Olculer
+        var disgenislik = window.outerWidth;
+        var disyukseklik = window.outerHeight
+
+        document.write("<h3>Pencere genisligi: " + icgenislik + "</h3>");
+        document.write("<h3> Pencere yuksekligi: " + icyukseklik + "</h3>");
+        // ekrana birsey yazdirirken html elementleri de kullanabiliriz
+
+        document.write("<h3> Pencere dis genisligi : "+ disgenislik + "</h3>");
+        document.write("<h3> Pencere dis yuksekligi :" + disyukseklik + "</h3>");
+
+        if (icgenislik > 505){
+            RenkDegistir("red", "white")
+
+        }
+
+
+
+    </script>
+</body>
+</html>
